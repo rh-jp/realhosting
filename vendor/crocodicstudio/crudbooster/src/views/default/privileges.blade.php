@@ -101,7 +101,7 @@
 						<table class='table table-striped table-hover'>
 							<thead>
 								<tr class='active'>
-									<th width='3%'>No.</th><th width='60%'>Module's Name</th><th>&nbsp;</th><th>Visible</th><th>Create</th><th>Read</th><th>Update</th><th>Delete</th>
+									<th width='3%'>No.</th><th width='60%'>Module's Naam</th><th>&nbsp;</th><th>Zichtbaar</th><th>Maken</th><th>Lezen</th><th>Update</th><th>Verwijder</th>
 								</tr>
 								<tr class='active'>
 									<th>&nbsp;</th>
@@ -135,7 +135,7 @@
 
                 </div><!-- /.box-body -->
                 <div class="box-footer">					
-					<button type='submit' class='btn btn-primary'><i class='fa fa-save'></i> Simpan</button>
+					<button type='submit' class='btn btn-primary'><i class='fa fa-save'></i> Opslaan</button>
                 </div><!-- /.box-footer-->
             </div><!-- /.box -->
         </div><!-- /.col -->
