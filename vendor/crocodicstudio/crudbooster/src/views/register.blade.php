@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Register Panel : {{$appname}}</title>
+    <title>Registratie : {{$appname}}</title>
     <meta name='generator' content='CRUDBooster.com'/>
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="{{ get_setting('favicon')?asset(get_setting('favicon')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}">
@@ -26,7 +26,7 @@
         margin: 2% auto;
       }
       .login-page, .register-page {
-          background: {{ get_setting("login_background_color")?:'#dddddd'}} url('{{ get_setting("login_background_image")?asset(get_setting("login_background_image")):asset('vendor/crudbooster/assets/bg_blur5.jpg') }}');
+          background: {{ get_setting("login_background_color")?:'#dddddd'}} url('{{ get_setting("login_background_image")?asset(get_setting("login_background_image")):asset('vendor/crudbooster/assets/realhosting.jpg') }}');
           color: {{ get_setting("login_font_color")?:'#ffffff' }} !important;
           background-repeat: no-repeat;
           background-position: center;
@@ -44,7 +44,7 @@
     <div class="login-box">
       <div class="login-logo">
         <a href="{{url('/')}}">
-          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}' style='max-width: 100%;max-height:170px'/>
+          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/realhosting.png') }}' style='max-width: 100%;max-height:170px'/>
         </a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
@@ -59,7 +59,7 @@
         <form autocomplete='off' action="{{ route('postRegister') }}" method="post">
 		    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <div class="form-group has-feedback">
-            <input autocomplete='off'  type="text" class="form-control" name='name' title='Enter your full name' required placeholder="Full Name"/>
+            <input autocomplete='off'  type="text" class="form-control" name='name' title='Enter your full name' required placeholder="Volledige naam"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
@@ -67,7 +67,7 @@
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input autocomplete='off'  type="password" title='Enter your new password' class="form-control" name='password' required placeholder="Password"/>
+            <input autocomplete='off'  type="password" title='Enter your new password' class="form-control" name='password' required placeholder="Wachtwoord"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
 
@@ -82,16 +82,16 @@
 
           <div class="form-group has-feedback">
             <div  class='checkbox'>
-              <label><input type='checkbox' required /> I agree the Terms and Conditions</label>
+              <label><input type='checkbox' required /> Ik ga akkoord met de voorwaarden</label>
             </div>
           </div>
           <div style="margin-bottom:10px" class='row'>
             <div class='col-xs-12'>
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>                
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Registeren</button>                
             </div>
           </div>                
           <div class='row'>
-            <div class='col-xs-12' align="center"><p style="padding:10px 0px 10px 0px">Do you have already an account ? <a href='{{route("getLogin")}}'>Click here</a>   </p></div>
+            <div class='col-xs-12' align="center"><p style="padding:10px 0px 10px 0px">Help je al een account ? <a href='{{route("getLogin")}}'>Klik hier</a>   </p></div>
           </div>
         </form>
         
