@@ -131,14 +131,14 @@ class PrivilegesController extends CBController {
 				DB::table("cms_privileges_roles")->insert($arrs);
 			}
 		}
-		return redirect($this->dashboard)->with(['message'=>"De data is geüpdatet !",'message_type'=>'Succesvol']);
+		return redirect($this->dashboard)->with(['message'=>"De data is geupdatet !",'message_type'=>'success']);
 	}
 	
 	public function getDelete($id) {
 		$row = DB::table($this->table)->where($this->primary_key,$id)->first();
 		DB::table($this->table)->where($this->primary_key,$id)->delete();
 		DB::table("cms_privileges_roles")->where("id_cms_privileges",$row->id)->delete();
-		return redirect()->back()->with(['message'=>"Data has been deleted !",'message_type'=>"success"]);
+		return redirect()->back()->with(['message'=>"Data is verwijderd !",'message_type'=>"success"]);
 	}
 
 	
