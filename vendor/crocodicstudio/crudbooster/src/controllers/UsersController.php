@@ -40,7 +40,7 @@ class UsersController extends CBController {
 			$this->form[] = array("label"=>"Privilege","name"=>"id_cms_privileges","type"=>"select","datatable"=>"cms_privileges,name",'required'=>true);		
 		}
 		$this->form[] = array("label"=>"Verander het wachtwoord","type"=>"header");
-		$this->form[] = array("label"=>"Password","name"=>"password","type"=>"password","help"=>"Laat het wachtwoord leeg als je deze niet wilt aanpassen");
+		$this->form[] = array("label"=>"Wachtwoord","name"=>"password","type"=>"password","help"=>"Laat het wachtwoord leeg als je deze niet wilt aanpassen");
 
 		if(get_method() == 'getProfile') {
 			$this->button_addmore     = FALSE;
