@@ -884,7 +884,7 @@ class AdminController extends CBController {
 
 		send_email($user->email,"Forgot Password $appname",$html);
 
-		return redirect()->route('getLogin')->with('message', 'We have sent new password to your email, check inbox or spambox !');
+		return redirect()->route('getLogin')->with('message', 'We hebben je een nieuw wachtwoord verstuurd, controleer in je inbox of spambox !');
 
 	}	
 
