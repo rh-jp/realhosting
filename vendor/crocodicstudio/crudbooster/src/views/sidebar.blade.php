@@ -12,7 +12,7 @@
             <div class="pull-left info">
                 <p>{{ get_my_name() }}</p>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a> • <a target="_blank" href="{{url('/')}}">Visit FrontEnd</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a> • <a target="_blank" href="{{url('/')}}">Bezoek website</a>
             </div>
         </div>
 
@@ -228,7 +228,7 @@
                         </ul>
                     </li>                
                     <li><a href='#' onclick="add_statistic_datatable()"><span>Data Table</span><i class='fa fa-plus pull-right'></i></a></li>
-                    <li><a href='{{route("AdminControllerGetUnsetDashboardConfigMode")}}'><i class='fa fa-power-off'></i> <span>Back To Admin</span></a></li>
+                    <li><a href='{{route("AdminControllerGetUnsetDashboardConfigMode")}}'><i class='fa fa-power-off'></i> <span>Terug naar admin</span></a></li>
                 </ul>
             </div>
         <?php else:?>
@@ -236,7 +236,7 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header">Menu Navigasi</li>
+                <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
             
                 <li ><a href="{{ route('AdminControllerGetIndex') }}"><i class='fa fa-dashboard'></i><span>Dashboard</span></a></li>

@@ -7,19 +7,19 @@
 
 
 @if($button_show_data)
-<a href="{{ mainpath() }}" id='btn_show_data' class="btn btn-app" title="Show Data {{ $data_sub_module->name?: ''}}">
-	<i class="fa fa-bars"></i> Show Data
+<a href="{{ mainpath() }}" id='btn_show_data' class="btn btn-app" title="Data weergeven {{ $data_sub_module->name?: ''}}">
+	<i class="fa fa-bars"></i> Data weergeven
 </a>
 @endif
 
 @if($button_new_data && $priv->is_create)
-<a href="{{ mainpath('add') }}" id='btn_add_new_data' class="btn btn-app" title="Add New Data {{ $data_sub_module->name?:'' }}">
-	<i class="fa fa-plus"></i> Add New Data
+<a href="{{ mainpath('add') }}" id='btn_add_new_data' class="btn btn-app" title="Nieuwe data toevoegen {{ $data_sub_module->name?:'' }}">
+	<i class="fa fa-plus"></i> Nieuwe data toevoegen
 </a>
 @endif
 
 @if($button_delete_data && $priv->is_delete)
-	<a href="javascript:void(0)" id='btn_delete_selected' title='Delete selected' class="disabled btn btn-app btn-delete-selected"><i class="fa fa-trash"></i> Delete Selected</a>
+	<a href="javascript:void(0)" id='btn_delete_selected' title='Verwijder geselecteerde' class="disabled btn btn-app btn-delete-selected"><i class="fa fa-trash"></i> Verwijderd geselecteerde</a>
 @endif
 
 <!--YOUR OWN HEADER BUTTON-->
@@ -44,19 +44,19 @@
 	@if($button_sort_filter)
 	<a href="javascript:void(0)" id='btn_advanced_filter' data-url-parameter='{{$build_query}}' title='Advanced Filter Data' class="btn btn-app">		
 		@if(Request::get('filter_column'))<span class="badge bg-yellow"><em>Filtered</em></span>@endif
-		<i class="fa fa-filter"></i> Sort & Filter
+		<i class="fa fa-filter"></i> Sorteer & Filter
 	</a>
 	@endif	
 
 	@if($button_export_data)
 	<a href="javascript:void(0)" id='btn_export_data' data-url-parameter='{{$build_query}}' title='Export Data' class="btn btn-app btn-export-data">
-		<i class="fa fa-upload"></i> Export Data
+		<i class="fa fa-upload"></i> Exporteer Data
 	</a>
 	@endif
 
 	@if($button_import_data)
 	<a href="{{ mainpath('import-data') }}" id='btn_import_data' data-url-parameter='{{$build_query}}' title='Import Data' class="btn btn-app btn-import-data">
-		<i class="fa fa-download"></i> Import Data
+		<i class="fa fa-download"></i> Importeer Data
 	</a>
 	@endif
 
@@ -82,7 +82,7 @@ $(function(){
 		var is_any_checked = $("#table_dashboard .checkbox:checked").length;
 		if(is_any_checked) {
 
-			if(!confirm("Are you sure want to delete all selected data ?")) return false;
+			if(!confirm("Weet je zeker dat je alle geselecteerde data wilt verwijderden ?")) return false;
 
 			var checks = [];
 			$("#table_dashboard .checkbox:checked").each(function() {
@@ -90,9 +90,9 @@ $(function(){
 				checks.push(id);
 			})
 
-			show_alert_floating('Please wait whilte delete selected...');
+			show_alert_floating('Moment geselecteerde data verwijderden...');
 			$.post("{{ mainpath('delete-selected') }}",{id:checks},function(resp) {				
-				show_alert_floating('Delete selected successfully !');
+				show_alert_floating('geselecteerde succesvol verwijderd !');
 				hide_alert_floating();
 				location.reload();
 			})
@@ -223,7 +223,7 @@ $(function(){
 			<div class="modal-header">
 				<button class="close" aria-label="Close" type="button" data-dismiss="modal">
 				<span aria-hidden="true">×</span></button>
-				<h4 class="modal-title"><i class='fa fa-filter'></i> Advanced Sort & Filter Data</h4>
+				<h4 class="modal-title"><i class='fa fa-filter'></i> Geavanceerde Sortering & Filter Data</h4>
 			</div>
 			<form method='get' action=''>
 				<div class="modal-body">
@@ -278,9 +278,9 @@ $(function(){
 					
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-default pull-left" type="button" data-dismiss="modal">Close</button>
+					<button class="btn btn-default pull-left" type="button" data-dismiss="modal">Sluiten</button>
 					<button class="btn btn-default pull-left btn-reset" type="reset" onclick='location.href="{{mainpath()}}"' >Reset</button>
-					<button class="btn btn-primary btn-submit" type="submit">Submit</button>
+					<button class="btn btn-primary btn-submit" type="submit">Versturen</button>
 				</div>
 			</form>
 		</div>
@@ -344,16 +344,16 @@ $(function(){
 					<div class="form-group">
 						<label>File Name</label>
 						<input type='text' name='filename' class='form-control' required value='Report {{ ($data_sub_module)?$data_sub_module->name:$module_name }} - {{date("d M Y")}}'/>
-						<div class='help-block'>You can rename the filename according to your whises</div>
+						<div class='help-block'>Je kunt de filenaam hernoemen naar je eigen wens</div>
 					</div>
 
-					<p><a href='javascript:void(0)' class='toggle_advanced_report' title='Click here for more advanced configuration export data'><i class='fa fa-plus-square-o'></i> Show Advanced Export</a></p>
+					<p><a href='javascript:void(0)' class='toggle_advanced_report' title='Click here for more advanced configuration export data'><i class='fa fa-plus-square-o'></i> Geef geavanceerde Export</a></p>
 
 					<div id='advanced_export' style='display: none'>
 					<div class="form-group">
 						<label>Max Data</label>
 						<input type='number' name='limit' class='form-control' required value='100' max="100000" min="1" />	
-						<div class='help-block'>Minimum 1 and maximum 100,000 rows per export session</div>					
+						<div class='help-block'>Minimum 1 en maximum 100,000 rijen per export sessie</div>					
 					</div>	
 
 					<div class='form-group'>
@@ -364,7 +364,7 @@ $(function(){
 					</div>
 
 					<div class="form-group">
-						<label>Format Export</label>
+						<label>Formaat Export</label>
 						<select name='fileformat' class='form-control'>
 							<option value='pdf'>PDF</option>
 							<option value='xls'>Microsoft Excel (xls)</option>							
@@ -373,7 +373,7 @@ $(function(){
 					</div>							
 
 					<div class="form-group">
-						<label>Page Size</label>
+						<label>Pagina formaat</label>
 						<select class='form-control' name='page_size'>
 							<option <?=($setting->default_paper_size=='Letter')?"selected":""?> value='Letter'>Letter</option>
 							<option <?=($setting->default_paper_size=='Legal')?"selected":""?> value='Legal'>Legal</option>
@@ -390,13 +390,13 @@ $(function(){
 							<option <?=$select?> value='B{{$i}}'>B{{$i}}</option>
 							<?php endfor;?>
 						</select>		
-						<div class='help-block'><input type='checkbox' name='default_paper_size' value='1'/> Set As Default Paper Size</div>				
+						<div class='help-block'><input type='checkbox' name='default_paper_size' value='1'/> Stel in als standaard Papier formaat</div>				
 					</div>
 
 					<div class="form-group">
-						<label>Page Orientation</label>
+						<label>Pagina orientatie</label>
 						<select class='form-control' name='page_orientation'>
-							<option value='potrait'>Potrait</option>
+							<option value='potrait'>Portrert</option>
 							<option value='landscape'>Landscape</option>
 						</select>						
 					</div>
@@ -404,8 +404,8 @@ $(function(){
 
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-default pull-left" type="button" data-dismiss="modal">Close</button>					
-					<button class="btn btn-primary btn-submit" type="submit">Export</button>
+					<button class="btn btn-default pull-left" type="button" data-dismiss="modal">Sluiten</button>					
+					<button class="btn btn-primary btn-submit" type="submit">Exporteren</button>
 				</div>
 			</form>
 		</div>
