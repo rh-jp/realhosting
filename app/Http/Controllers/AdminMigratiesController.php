@@ -36,7 +36,7 @@ class AdminMigratiesController extends \crocodicstudio\crudbooster\controllers\C
 		$this->form = array();
 		$this->form[] = array("label"=>"Vps","name"=>"vps","type"=>"text","required"=>TRUE,"validation"=>"required|min:3|max:255");
 		$this->form[] = array("label"=>"Domain","name"=>"domain","type"=>"text","required"=>TRUE,"validation"=>"required|min:3|max:255");
-		$this->form[] = array("label"=>"Datum","name"=>"datum","type"=>"date","required"=>TRUE,"validation"=>"required|date");
+		$this->form[] = array("label"=>"Datum","name"=>"datum","type"=>"date","required"=>FALSE,"validation"=>"date");
 		$this->form[] = array("label"=>"Opmerking","name"=>"opmerking","type"=>"textarea","required"=>FALSE,"validation"=>"string|min:5|max:5000");
 		$this->form[] = array("label"=>"Klant Opmerking","name"=>"klant_opmerking","type"=>"textarea","required"=>FALSE,"validation"=>"string|min:5|max:5000");
 		$this->form[] = array("label"=>"Status","name"=>"id_status","type"=>"select","required"=>FALSE,"validation"=>"integer|min:0","datatable"=>"status,currentstatus");
