@@ -85,7 +85,7 @@ class PrivilegesController extends CBController {
 			}	
 		}
 				
-		return redirect($this->dashboard)->with(['message'=>"Data has been added !",'message_type'=>'success']);
+		return redirect($this->dashboard)->with(['message'=>"Data is toegevoegd !",'message_type'=>'success']);
 	}
 	
 	public function getEdit($id)
