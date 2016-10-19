@@ -947,7 +947,7 @@ class AdminController extends CBController {
 		/* Send email welcome after register if any */
 		if($this->setting->register_email_welcome!='') {
 			$to = $post['email'];
-			$subject = 'Welcome Registration at '.$this->setting->appname;
+			$subject = 'Welkom registratie '.$this->setting->appname;
 
 			$html = $this->setting->register_email_welcome;
 			foreach($post as $key=>$val) {
@@ -959,9 +959,9 @@ class AdminController extends CBController {
 		}
 
 		if($is_confirmation) {
-			return redirect()->route('getLogin')->with('message','Thanks for register, please check your email at inbox or spambox. We have sent an email confirmation, follow the instruction at email');	
+			return redirect()->route('getLogin')->with('message','Bedank voor je registratie, Controleer je e-mail of je spambox. We hebben een e-mail verstuurd met de volgende stappen');	
 		}else{
-			return redirect()->route('getLogin')->with('message','Thanks for register, please sign in to start your session');	
+			return redirect()->route('getLogin')->with('message','Bedankt voor de registratie, login om je sessie te beginnen');	
 		}
 		
 	}
@@ -969,7 +969,7 @@ class AdminController extends CBController {
 	public function getLogout() {
 		Session::flush();
 
-		return redirect()->route('getLogin')->with('message','Thank You, See You Later !');
+		return redirect()->route('getLogin')->with('message','Tot de volgende keer !');
 	}
 
 }
