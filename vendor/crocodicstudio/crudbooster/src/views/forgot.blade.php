@@ -40,7 +40,7 @@
     <div class="login-box">
       <div class="login-logo">
         <a href="{{url('/')}}">
-          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/realhosting') }}' style='max-width: 100%;max-height:170px'/>
+          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/realhosting.png') }}' style='max-width: 100%;max-height:170px'/>
         </a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
