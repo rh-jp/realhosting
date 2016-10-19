@@ -23,7 +23,7 @@
     <link rel='stylesheet' href='{{asset("vendor/crudbooster/assets/css/main.css")}}'/>
     <style type="text/css">
       .login-page, .register-page {
-          background: {{ get_setting("login_background_color")?:'#dddddd'}} url('{{ get_setting("login_background_image")?asset(get_setting("login_background_image")):asset('vendor/crudbooster/assets/bg_blur5.jpg') }}');
+          background: {{ get_setting("login_background_color")?:'#dddddd'}} url('{{ get_setting("login_background_image")?asset(get_setting("login_background_image")):asset('vendor/crudbooster/assets/realhosting.jpg') }}');
           color: {{ get_setting("login_font_color")?:'#ffffff' }} !important;
           background-repeat: no-repeat;
           background-position: center;
@@ -40,7 +40,7 @@
     <div class="login-box">
       <div class="login-logo">
         <a href="{{url('/')}}">
-          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}' style='max-width: 100%;max-height:170px'/>
+          <img title='{!!($appname == 'CRUDBooster')?"<b>CRUD</b>Booster":$appname!!}' src='{{ get_setting("logo")?asset(get_setting('logo')):asset('vendor/crudbooster/assets/realhosting') }}' style='max-width: 100%;max-height:170px'/>
         </a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
@@ -51,7 +51,7 @@
       		</div>	
   		@endif 
 		
-        <p class="login-box-msg">Enter your email address, to request password</p>
+        <p class="login-box-msg">Vul je e-mail adres in om je wachtwoord op te vragen</p>
         <form action="{{ route('postForgot') }}" method="post">
 		  <input type="hidden" name="_token" value="{{ csrf_token() }}" />
           <div class="form-group has-feedback">
@@ -60,10 +60,10 @@
           </div>
           <div class="row">
             <div class="col-xs-8">    
-              Try login again ? <a href='{{route("getLogin")}}'>Click here</a>                          
+              Opnieuw inloggen ? <a href='{{route("getLogin")}}'>Klik hier</a>                          
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Submit</button>
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Versturen</button>
             </div><!-- /.col -->
           </div>
         </form>
