@@ -131,7 +131,7 @@ class PrivilegesController extends CBController {
 				DB::table("cms_privileges_roles")->insert($arrs);
 			}
 		}
-		return redirect($this->dashboard)->with(['message'=>"Data has been updated !",'message_type'=>'success']);
+		return redirect($this->dashboard)->with(['message'=>"De data is geüpdatet !",'message_type'=>'Succesvol']);
 	}
 	
 	public function getDelete($id) {
